@@ -9,7 +9,8 @@ export const hello = "router-hello";
 router.post("/", async (req, res) => {
   const person = await personRepository.createAndSave(req.body);
 
-  await personRepository.expire(person.entityId, 120);
+  // The line below will expire the entityId after 120 seconds
+  // await personRepository.expire(person.entityId, 120);
   res.send(person);
 });
 
