@@ -22,4 +22,7 @@ const swaggerDocument = YAML.load("api.yaml");
 app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /* start the server */
-app.listen(8080);
+const port = 8080;
+app.listen(port, () => {
+  console.log(`Listening in port ${port}`)
+});
